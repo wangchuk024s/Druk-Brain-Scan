@@ -1,0 +1,6 @@
+services:
+  - name: brain_scan
+    type: web
+    env: python
+    buildCommand: "docker build -t brain_scan -f Dockerfile ."
+    startCommand: "gunicorn app:app"
