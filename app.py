@@ -5,6 +5,7 @@ import numpy as np
 from tensorflow.keras.models import load_model
 from tensorflow.keras.preprocessing import image
 
+
 app = Flask(__name__)
 app.config['UPLOAD_FOLDER'] = 'static/uploads'
 app.config['ALLOWED_EXTENSIONS'] = {'png', 'jpg', 'jpeg', 'gif'}
@@ -74,4 +75,5 @@ def result(filename):
 
 if __name__ == '__main__':
     app.run(debug=True)
+
 
