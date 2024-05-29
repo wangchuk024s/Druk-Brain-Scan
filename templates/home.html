@@ -1,0 +1,222 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Home</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='styles.css') }}">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css" integrity="sha512-<HASH>" crossorigin="anonymous" />
+</head>
+<body>
+<a href="{{ url_for('home') }}" style="text-decoration: none;">
+  <h1 style="background-image: linear-gradient(to right, #4CB9E8, #007CC4);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    font-weight: 800;
+    font-size: 64px; /* Set font size to 64 */
+    text-align: left;
+    margin-left: 0; /* Ensure it's aligned with the left edge */">
+    <img src="{{ url_for('static', filename='logo.png') }}" alt="" style="height: 48.5px; width: auto;margin-left: 40px;"> <!-- Adjust height to 64px, width to auto (maintains aspect ratio) -->
+    Druk Brain Scan
+    </h1>
+</a>
+    
+
+    <div class="container3">
+        <div class="left">
+            <img src="{{ url_for('static', filename='pppp.png') }}" alt=""  >
+        </div>
+        <div class="right">
+            <h1>Welcome to the MRI Brain Scan Analysis</h1>
+            <button onclick="window.location.href='/upload'">Check for MRI</button>
+        </div>
+    </div>
+
+
+
+
+    <div class="page-content" style="margin-top: -200px;">
+        <div class="Card">
+          <div class="content">
+            <h2>Hi there!</h2>
+            <p>Worried about brain tumors?
+              Our AI-powered tool can help.</p>
+            <button class="btn">Look</button>
+          </div>
+        </div>
+        <div class="Card">
+          <div class="content">
+            <h2>All you got to do is?</h2>
+            <p>Upload your MRI scans securely and get a preliminary analysis for potential tumors.</p>
+            <button class="btn">Look</button>
+          </div>
+        </div>
+
+        <div class="Card">
+          <div class="content">
+            <h2>Still in doubt</h2>
+            <p>This is not a diagnostic tool, but it can be a valuable first step for early recognition.</p>
+            <button class="btn">Look</button>
+          </div>
+        </div>
+
+        <div class="Card">
+          <div class="content">
+            <h2>It's for</h2>
+            <p>Gain peace of mind or get directed to a healthcare professional for further evaluation.</p>
+            <button class="btn">Look</button>
+          </div>
+        </div>
+      </div>
+
+      <h1 style="text-align: center;
+      padding: 20px; margin-top: 30px;">How to use this Service</h1>
+
+      <div class="progress">
+        <div class="progress_inner">
+          
+          <div class="progress_inner__bar">
+            <div class="progress_inner__bar--set"></div>
+          </div>
+      
+          <div class="progress_inner__tabs" style="color: rgb(0, 0, 0);">
+            <div class="tab tab-0">
+              <h1>Step 1</h1>
+              <p>Click the "Check for Brain Tumor" button.</p>
+            </div>
+            <div class="tab tab-1">
+              <h1>Step 2</h1>
+              <p>Upload an MRI scan image from your local device.</p>
+            </div>
+
+            <div class="tab tab-2">
+              <h1>Step 3</h1>
+              <p>Click the "Check" button to proceed.</p>
+            </div>
+            <div class="tab tab-3">
+              <h1>Step 4</h1>
+              <p>Your results will be displayed.</p>
+            </div>
+            <div class="tab tab-4">
+              <h1>Step 5</h1>
+              <p>To perform another check, click the "Back to Home" button.</p>
+            </div>
+          </div>
+      
+          <div class="progress_inner__status">
+            <div class="box_base"></div>
+            <div class="box_lid"></div>
+            <div class="box_ribbon"></div>
+            <div class="box_bow">
+              <div class="box_bow__left"></div>
+              <div class="box_bow__right"></div>
+            </div>
+            <div class="box_item"></div>
+            <div class="box_tag"></div>
+            <div class="box_string"></div>
+          </div>
+        </div>
+      </div>
+      
+      
+          <div class="progress_inner__status">
+            <div class="box_base"></div>
+            <div class="box_lid"></div>
+            <div class="box_ribbon"></div>
+            <div class="box_bow">
+              <div class="box_bow__left"></div>
+              <div class="box_bow__right"></div>
+            </div>
+            <div class="box_item"></div>
+            <div class="box_tag"></div>
+            <div class="box_string"></div>
+          </div>
+        </div>
+      </div>
+      
+
+
+
+
+    <div class="container" >
+            <div class="card card0">
+              <div class="border">
+                <h2>Tseltrim Pemo</h2>
+                <div class="icons">
+                  <a href=""><i class="fab fa-instagram" aria-hidden="true"></i></a>
+                  <a href=""><i class="fas fa-envelope" aria-hidden="true"></i></a>
+                  <a href=""><i class="fab fa-linkedin" aria-hidden="true"></i></a>
+                  <a href=""><i class="fab fa-facebook" aria-hidden="true"></i></a>
+                </div>
+              </div>
+            </div>
+
+            <div class="card card1">
+              <div class="border">
+                <h2>Sonam Yangzom</h2>
+                <div class="icons">
+                  <a href=""><i class="fab fa-instagram" aria-hidden="true"></i></a>
+                  <a href=""><i class="fas fa-envelope" aria-hidden="true"></i></a>
+                  <a href=""><i class="fab fa-linkedin" aria-hidden="true"></i></a>
+                  <a href=""><i class="fab fa-facebook" aria-hidden="true"></i></a>
+                </div>
+              </div>
+            </div>
+            <div class="card card2">
+              <div class="border">
+                <h2>Tenzin Wangmo</h2>
+                <div class="icons">
+                  <a href=""><i class="fab fa-instagram" aria-hidden="true"></i></a>
+                  <a href=""><i class="fas fa-envelope" aria-hidden="true"></i></a>
+                  <a href=""><i class="fab fa-linkedin" aria-hidden="true"></i></a>
+                  <a href=""><i class="fab fa-facebook" aria-hidden="true"></i></a>
+                </div>
+              </div>
+            </div>
+
+            
+
+            
+          </div>
+
+
+          <div class="container" >
+
+            <div class="card card3">
+              <div class="border">
+                <h2>Tashi Norbu Dema</h2>
+                <div class="icons">
+                  <a href=""><i class="fab fa-instagram" aria-hidden="true"></i></a>
+                  <a href=""><i class="fas fa-envelope" aria-hidden="true"></i></a>
+                  <a href=""><i class="fab fa-linkedin" aria-hidden="true"></i></a>
+                  <a href=""><i class="fab fa-facebook" aria-hidden="true"></i></a>
+                </div>
+              </div>
+            </div>  
+            <div class="card card4">
+              <div class="border">
+                <h2>Sonam Wangchuk</h2>
+                <div class="icons">
+                  <a href=""><i class="fab fa-instagram" aria-hidden="true"></i></a>
+                  <a href=""><i class="fas fa-envelope" aria-hidden="true"></i></a>
+                  <a href=""><i class="fab fa-linkedin" aria-hidden="true"></i></a>
+                  <a href=""><i class="fab fa-facebook" aria-hidden="true"></i></a>
+                </div>
+              </div>
+            </div>    
+          </div>
+
+
+          <footer style="background-color: #001420;
+    color: white;
+    padding: 1rem;
+    display: flex;
+    align-items: center;
+    justify-content: flex-end;">
+        <h3 style="margin: 0px;">
+            &copy; 2024 DrukBrainScan</h3>
+
+      </footer>
+ 
+          
+</body>
+</html>

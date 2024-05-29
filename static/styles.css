@@ -1,0 +1,692 @@
+body {
+    font-family: Arial, sans-serif;
+    text-align: center;
+    
+    
+    background-color: #f4f4f4;
+    font-family: sans-serif;
+  margin: 20px;
+  /* background-color: #343434; */
+  background-image: url("bG1.png"); /* Replace with your image path */
+background-repeat: no-repeat;  /* Prevent repetition */
+background-attachment: fixed;   /* Keep image fixed in viewport */
+background-size: cover;
+}
+
+h1 {
+    color: #333;
+}
+
+button {
+    margin: 10px;
+    padding: 10px 20px;
+    background-color: #007BFF;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+button:hover {
+    background-color: #0056b3;
+}
+
+img {
+    max-width: 100%;
+    height: auto;
+}
+
+form {
+    display: inline-block;
+    margin: 1px;
+}
+
+.container3 {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    height: 100vh;
+    padding: 1px;
+}
+.left, .right {
+  margin-top: -250px;
+    width: 50%;
+    
+}
+.left img {
+    width: 70%;
+    height: auto;
+}
+.right {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    justify-content: center;
+    padding-left: 40px;
+}
+.right h1 {
+    margin: 0 0 20px 0;
+}
+.right button {
+    padding: 10px 20px;
+    font-size: 16px;
+}
+
+
+
+
+/* Main content styles */
+.container2 {
+    display: flex;
+    
+  }
+  
+  .upload-section {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+  }
+  
+  .upload-section h2 {
+    margin-right: auto; /* Pushes h2 and button to the right */
+    opacity: 1; 
+    background-image: linear-gradient(to right, #4CB9E8, #007CC4);
+    /* -webkit-background-clip: text; */
+    -webkit-text-fill-color: transparent;
+    font-size: 45px; font-weight: 600; 
+    align-items: center;
+  }
+  
+  .custom-upload-btn {
+    margin-left: 900px;
+    margin-bottom: auto;
+    background-color: #ffffff;
+    margin-top: 10px;
+    color:  #007CC4;
+    font-size: 25px;
+    font-weight: 800;
+    padding: 10px 20px;
+    border: 10px solid, #007CC4;
+    border-radius: 100px;
+    cursor: pointer;
+    display: inline-block; /* Display as inline-block */
+  }
+  
+  .custom-upload-btn:hover {
+    background-color:  #007CC4;
+    border: 5px solid, #ffffff;
+    color:  #ffffff;
+  
+  }
+  
+  
+  
+  
+  
+  button[type="submit"] {
+  padding: 10px 20px;
+  border: none;
+  border-radius: 4px;
+  background-color: #4CAF50; /* Green color */
+  color: white;
+  cursor: pointer;
+  transition: background-color 0.2s ease-in-out;
+  }
+  
+  button[type="submit"]:hover {
+  background-color: #3e8e41; /* Darker green on hover */
+  }
+  
+  #preview {
+  max-width: 200px; /* Adjust as needed */
+  margin-top: 10px; /* Adjust spacing */
+  }
+  
+  
+  
+  
+  /* vision */
+  
+  /* Import fonts (you'll need to update the link or host the fonts yourself) */
+  @import url('https://fonts.googleapis.com/css?family=Cardo:400i|Rubik:400,700&display=swap');
+  
+  /* Define variables (consider using CSS custom properties for better browser support) */
+  :root {
+  --d: 700ms;
+  --e: cubic-bezier(0.19, 1, 0.22, 1);
+  --font-sans: 'Rubik', sans-serif;
+  --font-serif: 'Cardo', serif;
+  }
+  
+  
+  /* Page Content Styles */
+  .page-content {
+  display: grid;
+  grid-gap: 1rem;
+  padding: 1rem;
+  max-width: 1024px;
+  margin: 0 auto;
+  font-family: var(--font-sans);
+  
+  @media (min-width: 600px) {
+    grid-template-columns: repeat(2, 1fr);
+  }
+  
+  @media (min-width: 800px) {
+    grid-template-columns: repeat(4, 1fr);
+  }
+  }
+  
+  /* Card Styles */
+  .Card {
+  position: relative;
+  display: flex;
+  align-items: flex-end;
+  overflow: hidden;
+  padding: 1rem;
+  width: 100%;
+  text-align: center;
+  color: whitesmoke;
+  background-color: whitesmoke;
+  box-shadow: 0 1px 1px rgba(0, 0, 0, 0.1),
+             0 2px 2px rgba(0, 0, 0, 0.1),
+             0 4px 4px rgba(0, 0, 0, 0.1),
+             0 8px 8px rgba(0, 0, 0, 0.1),
+             0 16px 16px rgba(0, 0, 0, 0.1);
+  
+  @media (min-width: 600px) {
+    height: 350px;
+  }
+  
+  /* Background overlay before content */
+  &:before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 110%;
+    background-size: cover;
+    background-position: 0 0;
+    transition: transform calc(var(--d) * 1.5) var(--e);
+    pointer-events: none;
+  }
+  
+  /* Gradient overlay behind content */
+  &:after {
+    content: '';
+    display: block;
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 200%;
+    pointer-events: none;
+    background-image: linear-gradient(
+      to bottom,
+      /* hsla(0, 0%, 0%, 0) 0%,
+      hsla(0, 0%, 0%, 0.009) 11.7%,
+      hsla(0, 0%, 0%, 0.034) 22.1%,
+      hsla(0, 0%, 0%, 0.072) 31.2%,
+      hsla(0, 0%, 0%, 0.123) 39.4%,
+      hsla(0, 0%, 0%, 0.182) 46.6%,
+      hsla(0, 0%, 0%, 0.249) 53.1%,
+      hsla(0, 0%, 0%, 0.320) 58.9%,
+      hsla(0, 0%, 0%, 0.394) 64.3%,
+      hsla(0, 0%, 0%, 0.468) 69.3%,
+      hsla(0, 0%, 0%, 0.540) 74.1%,
+      hsla(0, 0%, 0%, 0.607) 78.8%,
+      hsla(0, 0%, 0%, 0.668) 83.6%,
+      hsla(0, 0%, 0%, 0.721) 88.7%,
+      hsla(0, 0%, 0%, 0.762) 94.1%,
+      hsla(0, 0%, 0%, 0.790) 100% */
+      #4CB9E8, #007CC4
+  
+    );
+    transform: translateY(-50%);
+    transition: transform calc(var(--d) * 2) var(--e);
+  }
+  
+  
+  }
+  
+  
+  /* Card Content Styles */
+  .content {
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 100%;
+    padding: 1rem;
+    transition: transform var(--d) var(--e);
+    z-index: 1;
+  
+    > * + * {
+      margin-top: 1rem;
+    }
+  }
+  
+  /* Title Styles */
+  .title {
+    font-size: 1.3rem;
+    font-weight: bold;
+    line-height: 1.2;
+  }
+  
+  /* Copy Styles */
+  .copy {
+    font-family: var(--font-serif);
+    font-size: 1.125rem;
+    font-style: italic;
+    line-height: 1.35;
+  }
+  
+  /* Button Styles */
+  .btn {
+    cursor: pointer;
+    margin-top: 1.5rem;
+    padding: 0.75rem 1.5rem;
+    font-size: 0.65rem;
+    font-weight: bold;
+    letter-spacing: 0.025rem;
+    text-transform: uppercase;
+    color: white;
+    background-color: black;
+    border: none;
+  
+    &:hover {
+      background-color: lighten(black, 5%);
+    }
+  
+    &:focus {
+      outline: 1px dashed yellow;
+      outline-offset: 3px;
+    }
+  }
+  
+  /* Hover Effects (Media Query) */
+  @media (hover: hover) and (min-width: 600px) {
+    .Card:after {
+      transform: translateY(-50%);
+    }
+  
+    .content {
+      transform: translateY(calc(100% - 4.5rem));
+  
+      > *:not(.title) {
+        opacity: 0;
+        transform: translateY(1rem);
+        transition:
+          transform var(--d) var(--e),
+          opacity var(--d) var(--e);
+      }
+    }
+  
+    .Card:hover,
+    .Card:focus-within {
+      align-items: center;
+  
+      &:before {
+        transform: translateY(-4%);
+      }
+      &:after {
+        transform: translateY(-50%);
+      }
+  
+      .content {
+        transform: translateY(0);
+  
+        > *:not(.title) {
+          opacity: 1;
+          transform: translateY(0);
+          transition-delay: calc(var(--d) / 8);
+        }
+      }
+    }
+  
+    .Card:focus-within {
+      &:before,
+      &:after,
+      .content,
+      .content > *:not(.title) {
+        transition-duration: 0s;
+      }
+    }
+  }
+  
+  
+  /* hoe to use */
+  
+  
+  /* Style the main progress container */
+  .progress {
+    display: flex;
+    flex-direction: column;
+    width: fit-content; /* Adjust width as needed */
+    border: 1px solid #ddd;
+    border-radius: 5px;
+    padding: 1rem;
+  }
+  
+  /* Style the inner container holding steps and content */
+  .progress_inner {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+  }
+  
+  /* Style the list of progress steps */
+  .progress_inner__steps {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+  }
+  
+  /* Style each individual step element */
+  .progress_inner__step {
+    margin-bottom: 1rem;
+    display: flex;
+    align-items: center;
+  }
+  
+  /* Style the label for each step */
+  .progress_inner__step label {
+    margin-right: 1rem;
+    font-weight: bold;
+  }
+  
+  /* Style the progress bar container */
+  .progress_inner__bar {
+    height: 5px;
+    background-color: #ddd;
+    margin-bottom: 1rem;
+  }
+  
+  /* Style the progress indicator within the bar */
+  .progress_inner__bar--set {
+    height: 100%;
+    background-color: teal; /* Replace with your desired progress color */
+    transition: width 0.5s ease-in-out;
+  }
+  
+  /* Style the container for the step content tabs */
+  .progress_inner__tabs {
+    display: flex;
+    flex-wrap: wrap; /* Wrap tabs if needed */
+  }
+  
+  /* Style each individual step content tab */
+  .tab {
+    flex: 1 0 25%; /* Adjust width as needed */
+    margin: 0.5rem;
+    padding: 1rem;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+    text-align: center;
+  }
+  
+  /* Style the heading within each tab */
+  .tab h1 {
+    margin-bottom: 0.5rem;
+  }
+  
+  /* Style the container for decorative box elements */
+  .progress_inner__status {
+    /* Modify or remove styles for decorative box elements */
+    display: flex;
+    flex-wrap: wrap; /* Wrap elements if needed */
+    justify-content: center;
+    align-items: center;
+    margin-top: 1rem;
+  }
+  
+  /* Define styles for each decorative box element (optional) */
+  .box_base,
+  .box_lid,
+  .box_ribbon,
+  .box_bow,
+  .box_bow__left,
+  .box_bow__right,
+  .box_item,
+  .box_tag,
+  .box_string {
+    width: 20px;
+    height: 20px;
+    /* Add background colors, borders, etc. for visual representation */
+  }
+  
+  
+  .container{
+    height: 1vh;
+   width: 100vw;
+   max-height: 800px;
+   max-width: 1280px;
+   min-height: 400px;
+   min-width: 1000px;
+   display: flex;
+   justify-content: space-around;
+   align-items: center;
+   margin: 0 auto;
+   }
+   
+  
+  .border{
+    height: 369px;
+    width: 290px;
+    background: transparent;
+    border-radius: 10px;
+    transition: border 1s;
+    position: relative;
+  }
+   
+  
+   .border:hover{
+    border: 1px solid white;
+   }
+     
+  
+  .card{ 
+    height: 379px;
+    width: 300px;
+    background: grey;
+    border-radius: 10px;
+    transition: background 0.8s;
+    overflow: hidden;
+    background: black;
+    box-shadow: 0 70px 63px -60px #000000;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: relative;
+   }
+   h2{
+    font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif;
+   color: white;
+   margin: 20px;
+   opacity: 0;
+   transition: opacity 1s;
+  }
+  
+   .card a{
+    opacity: 0;
+    transition: opacity 1s;
+    color: #fff;
+   
+  }
+   
+  .icons{
+    position: absolute;
+   fill: #fff;
+   color: #fff;
+   height: 130px;
+   top: 226px;
+   width: 50px;
+   display: flex;
+   flex-direction: column;
+   align-items: center;
+   justify-content: space-around;
+  }
+   
+  
+  .card0{
+    background: url('tp.jpg') center center no-repeat;
+   background-size: 300px;
+  }
+  
+  
+   .card0:hover{
+    background: url('tp.jpg') left center no-repeat;
+     background-size: 600px;
+     h2{
+      opacity: 1;
+     }
+       
+  
+     a{
+      opacity: 1;
+     } 
+     a:hover{
+      color: grey;
+     }
+   }
+     
+  
+   
+       
+  
+  .card1{
+    background: url('sy.jpg') center center no-repeat;
+   background-size: 300px;
+  
+  }
+  
+   .card1:hover{
+    background: url('sy.jpg') left center no-repeat;
+     background-size: 600px;
+     h2{
+      opacity: 1;
+     }
+       
+  
+     a{
+      opacity: 1;
+     } 
+     a:hover{
+      color: grey;
+     }
+   }
+   
+  
+   .card2{
+    background: url('tw.jpg') center center no-repeat;
+   background-size: 300px;
+  
+  }
+  
+   .card2:hover{
+    background: url('tw.jpg') left center no-repeat;
+     background-size: 600px;
+     h2{
+      opacity: 1;
+     }
+       
+  
+     a{
+      opacity: 1;
+     } 
+     a:hover{
+      color: grey;
+     }
+   }
+   
+       
+  
+  .card3{
+    background: url('tnd.jpg') center center no-repeat;
+    background-size: 300px;
+   
+  }
+  
+   .card3:hover{
+    background: url('tnd.jpg') left center no-repeat;
+    background-size: 600px;
+    h2{
+      opacity: 1;
+     }
+       
+  
+     a{
+      opacity: 1;
+     }
+     a:hover{
+      color: grey;
+     } 
+   }
+  
+     
+    
+  
+  .card4{
+  background: url('sw.jpg') center center no-repeat;
+  background-size: 300px;
+  
+  }
+  
+  .card4:hover{
+  background: url('sw.jpg') left center no-repeat;
+  background-size: 600px;
+  h2{
+    opacity: 1;
+   }
+     
+  
+   a{
+    opacity: 1;
+   } 
+   a:hover{
+    color: grey;
+   }
+  }  
+   
+  
+  
+  
+  
+  /* Tablet */
+  @media only screen and (max-width: 1024px) {
+  .container {
+    flex-direction: column;
+  }
+  
+  .card {
+    margin-bottom: 20px;
+  }
+  }
+  
+  /* Phones */
+  @media only screen and (max-width: 768px) {
+  .container {
+    flex-wrap: wrap;
+  }
+  
+  .card {
+    width: 100%;
+    max-width: 300px;
+    margin: 10px;
+  }
+  }
+  
+  /* Small Phones */
+  @media only screen and (max-width: 480px) {
+  .card {
+    max-width: 250px;
+  }
+  }
+  
+  /* Extra Small Phones */
+  @media only screen and (max-width: 320px) {
+  .card {
+    max-width: 200px;
+  }
+  }
