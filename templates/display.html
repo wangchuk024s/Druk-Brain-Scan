@@ -47,7 +47,7 @@
             <h1>Uploaded MRI Image</h1>
             <img src="{{ url_for('static', filename='uploads/' + filename) }}" alt="Uploaded Image">
             <form action="{{ url_for('result', filename=filename) }}" method="get">
-                <button type="submit">Check</button>
+                <button type="submit" style="border-radius: 50px; background-color: #007CC4;">Check</button>
                 <button type="button" onclick="window.location.href='/'">Cancel</button>
             </form>
         </div>
