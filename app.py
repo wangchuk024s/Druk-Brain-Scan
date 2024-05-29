@@ -64,11 +64,11 @@ def result(filename):
     probability = prediction[0][0]
     
     if probability >= 0.5:
-        result_text = f"Yes (Probability: {probability:.4f})"
-    elif probability >= 0.1:
-        result_text = f"No (Probability: {probability:.4f})"
+        result_text = f"You have Brain Tumor (Probability: {probability*100: .4f}%)"
+    elif probability >= 0.009:
+        result_text = f"No you do not have Brain Tumor(Probability: {probability*100:.4f}%)"
     else:
-        result_text = "Not an MRI Scan, falls into the Other Image section"
+        result_text = "Not an MRI Scan"
     
     return render_template('result.html', filename=filename, result=result_text)
 

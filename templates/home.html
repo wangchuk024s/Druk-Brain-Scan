@@ -6,6 +6,20 @@
     <link rel="stylesheet" href="{{ url_for('static', filename='styles.css') }}">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css" integrity="sha512-<HASH>" crossorigin="anonymous" />
 </head>
+
+<style>
+.container3 {
+        display: flex;
+        align-items: center; /* Vertically center content */
+        justify-content: space-between; /* Add space between .left and .right */
+    }
+
+    .right {
+        text-align: left;
+        margin-left: -140px; /* Adjust the margin to bring .right closer to .left */
+    }
+
+</style>
 <body>
 <a href="{{ url_for('home') }}" style="text-decoration: none;">
   <h1 style="background-image: linear-gradient(to right, #4CB9E8, #007CC4);
@@ -25,9 +39,9 @@
         <div class="left">
             <img src="{{ url_for('static', filename='pppp.png') }}" alt=""  >
         </div>
-        <div class="right">
-            <h1>Welcome to the MRI Brain Scan Analysis</h1>
-            <button onclick="window.location.href='/upload'">Check for MRI</button>
+        <div class="right" style="text-align: left;">
+            <h1>Druk Brain Scan is an innovative and cutting-edge medical service dedicated to the early detection and diagnosis of brain tumors using advanced imaging techniques and artificial intelligence. Our mission is to provide accessible, accurate, and timely brain scan services to enhance patient outcomes and support healthcare professionals in making informed decisions.</h1>
+            <button onclick="window.location.href='/upload'">Check for Brain Tumor</button>
         </div>
     </div>
 

@@ -5,6 +5,30 @@
     <title>Result Page</title>
     <link rel="stylesheet" href="{{ url_for('static', filename='styles.css') }}">
 </head>
+<style>
+.container3 {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+        }
+        .right {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            text-align: center;
+            margin-left: 20px; /* Adjust the margin to move the .right div to the left */
+        }
+        .right form {
+            display: flex;
+            gap: 10px;
+            margin-top: 10px;
+        }
+        .right form button {
+            flex: 1;
+        }
+
+</style>
 <body>
     <a href="{{ url_for('home') }}" style="text-decoration: none;">
         <h1 style="background-image: linear-gradient(to right, #4CB9E8, #007CC4);
@@ -20,9 +44,7 @@
       </a>
 
       <div class="container3">
-        <div class="left">
-            <img src="{{ url_for('static', filename='pppp.png') }}" alt="">
-        </div>
+       
         <div class="right">
             <h1>Result Page</h1>
             <div class="image-container">

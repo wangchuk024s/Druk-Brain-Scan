@@ -4,6 +4,18 @@
     <meta charset="UTF-8">
     <title>Upload</title>
     <link rel="stylesheet" href="{{ url_for('static', filename='styles.css') }}">
+    <style>
+        .form-container {
+            display: flex;
+            flex-direction: column;
+            align-items: flex-start;
+        }
+        .button-container {
+            display: flex;
+            gap: 10px;
+            margin-top: 10px;
+        }
+    </style>
 </head>
 <body>
     <a href="{{ url_for('home') }}" style="text-decoration: none;">
@@ -16,32 +28,25 @@
           margin-left: 0; /* Ensure it's aligned with the left edge */">
           <img src="{{ url_for('static', filename='logo.png') }}" alt="" style="height: 48.5px; width: auto;margin-left: 40px;"> <!-- Adjust height to 64px, width to auto (maintains aspect ratio) -->
           Druk Brain Scan
-          </h1>
-      </a>
+        </h1>
+    </a>
     <div class="container3">
         <div class="left">
             <img src="{{ url_for('static', filename='pppp.png') }}" alt="">
         </div>
         <div class="right">
             <h1>Upload MRI Image</h1>
-    
-    <form action="{{ url_for('upload') }}" method="post" enctype="multipart/form-data">
-        <input type="file" name="file">
-        <button type="submit">Upload MRI</button>
-        <button type="button" onclick="window.location.href='/'">Cancel</button>
-    </form>
+            <form action="{{ url_for('upload') }}" method="post" enctype="multipart/form-data" class="form-container">
+                <input type="file" name="file">
+                <div class="button-container">
+                    <button type="submit">Upload MRI</button>
+                    <button type="button" onclick="window.location.href='/'">Cancel</button>
+                </div>
+            </form>
         </div>
     </div>
-    <footer style="background-color: #001420;
-    color: white;
-    padding: 1rem;
-    display: flex;
-    align-items: center;
-    justify-content: flex-end;">
-        <h3 style="margin: 0px;">
-            &copy; 2024 DrukBrainScan</h3>
-
-      </footer>
-   
+    <footer style="background-color: #001420; color: white; padding: 1rem; display: flex; align-items: center; justify-content: flex-end;">
+        <h3 style="margin: 0px;">&copy; 2024 DrukBrainScan</h3>
+    </footer>
 </body>
 </html>
