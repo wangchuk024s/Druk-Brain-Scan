@@ -2,33 +2,31 @@ import os
 from flask import Flask, render_template, request, redirect, url_for
 from werkzeug.utils import secure_filename
 import numpy as np
-from tensorflow.keras.models import load_model
-from tensorflow.keras.preprocessing import image
-
+import cv2
+import torch
 
 app = Flask(__name__)
 app.config['UPLOAD_FOLDER'] = 'static/uploads'
 app.config['ALLOWED_EXTENSIONS'] = {'png', 'jpg', 'jpeg', 'gif'}
 
-model_path = 'model.h5'
+model_path = 'model.pth'  # Path to your PyTorch model file
 
-# Check if the model file exists
-if not os.path.isfile(model_path):
-    raise FileNotFoundError(f"The model file '{model_path}' does not exist. Please place it in the correct directory.")
-
-# Load the model from the h5 file
-model_pipeline = load_model(model_path)
+# Load the model from the PyTorch file
+model = torch.load(model_path)
 
 def allowed_file(filename):
     return '.' in filename and filename.rsplit('.', 1)[1].lower() in app.config['ALLOWED_EXTENSIONS']
 
 def preprocess_image(image_path):
-    # Load and preprocess the image
-    img = image.load_img(image_path, target_size=(224, 224))  # Ensure consistent input size
-    img_array = image.img_to_array(img)
-    img_array = np.expand_dims(img_array, axis=0)  # Expand dimensions to create batch size of 1
-    img_array /= 255.0  # Normalize pixel values
-    return img_array
+    # Load and preprocess the image using OpenCV
+    img = cv2.imread(image_path)
+    img = cv2.cvtColor(img, cv2.COLOR_BGR2RGB)  # Convert BGR to RGB
+    img = cv2.resize(img, (224, 224))  # Resize to match the input size of the model
+    img = img / 255.0  # Normalize pixel values
+    img = np.transpose(img, (2, 0, 1))  # Transpose dimensions to match PyTorch format
+    img = np.expand_dims(img, axis=0)  # Add batch dimension
+    img = torch.tensor(img, dtype=torch.float32)  # Convert to PyTorch tensor
+    return img
 
 @app.route('/')
 def home():
@@ -60,13 +58,13 @@ def result(filename):
     img_path = os.path.join(app.config['UPLOAD_FOLDER'], filename)
     preprocessed_image = preprocess_image(img_path)
     
-    # Make prediction
-    prediction = model_pipeline.predict(preprocessed_image)
-    probability = prediction[0][0]
+    # Make prediction using the loaded model
+    prediction = model(preprocessed_image)
+    probability = torch.sigmoid(prediction).item()
     
     if probability >= 0.5:
         result_text = f"You have Brain Tumor (Probability: {probability*100: .4f}%)"
-    elif probability >= 0.009:
+    elif probability >= 0.001:
         result_text = f"No you do not have Brain Tumor(Probability: {probability*100:.4f}%)"
     else:
         result_text = "Not an MRI Scan"
@@ -75,5 +73,3 @@ def result(filename):
 
 if __name__ == '__main__':
     app.run(debug=True)
-
-
